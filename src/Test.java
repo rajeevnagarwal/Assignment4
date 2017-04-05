@@ -8,9 +8,10 @@ public class Test {
     {
         Layout layout = new Layout();
         ArrayList<Blocks> tables = layout.tables;
-        int count = 0;
-        int count1 = 0;
-        int count2 = 0;
+        BufferManager.initialize(100);
+        PageTable pageTable = new PageTable();
+        Experiment.nested_join(tables,"Employee","Department",pageTable,"LRU");
+        System.out.println(PageTable.page_fault);
 
     }
 

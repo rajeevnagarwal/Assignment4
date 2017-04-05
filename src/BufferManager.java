@@ -6,7 +6,12 @@ import java.util.ArrayList;
 public class BufferManager {
     public static int size;
     public static ArrayList<Blocks> list;
+    public static void initialize(int s)
+    {
+        size = s;
+        list = new ArrayList<Blocks>();
 
+    }
     public static Boolean hasCapacity()
     {
         if(list.size()==size)
@@ -16,10 +21,10 @@ public class BufferManager {
         else
             return true;
     }
-    public void add(String address, String type)
+    /*public void add(String address, String type)
     {
         list.add(new Blocks(address,type));
-    }
+    }*/
 
 
 
