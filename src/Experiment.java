@@ -15,14 +15,21 @@ public class Experiment {
     private static void join(ArrayList<Blocks> R, ArrayList<Blocks> S,PageTable pTable,String policy) {
         for (int i = 0; i < R.size(); i++) {
             String address = R.get(i).id;
-            //System.out.println(i);
+            /*System.out.println(R.get(i).id);
+            System.out.println(R.get(i).type);*/
             pTable.pageReference(address,R.get(i).type,policy);
             for (int j = 0; j < S.size(); j++) {
                 String address1 = S.get(j).id;
+                /*System.out.println(S.get(j).id);
+                System.out.println(S.get(j).type);*/
                 pTable.pageReference(address1,S.get(j).type,policy);
                 for (int k = 0; k < R.get(i).no_records; k++) {
+                    /*System.out.println(R.get(i).id);
+                    System.out.println(R.get(i).type);*/
                     pTable.pageReference(address,R.get(i).type,policy);
                     for (int l = 0; l < S.get(j).no_records; l++) {
+                        /*System.out.println(S.get(i).id);
+                        System.out.println(S.get(j).type);*/
                         pTable.pageReference(address1,S.get(j).type,policy);
 
                     }
